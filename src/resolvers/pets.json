@@ -1,0 +1,38 @@
+{
+  "dogs": [
+    {
+      "age": 5,
+      "name": "Rover"
+    },
+    {
+      "age": 1,
+      "name": "Jack"
+    },
+    {
+      "age": 4,
+      "name": "Max"
+    },
+    {
+      "age": 12,
+      "name": "Rex"
+    }
+  ],
+  "cats": [
+    {
+      "age": 17,
+      "name": "Lily"
+    },
+    {
+      "age": 3,
+      "name": "Charlie"
+    },
+    {
+      "age": 6,
+      "name": "Frank"
+    },
+    {
+      "age": 9,
+      "name": "Boots"
+    }
+  ]
+}

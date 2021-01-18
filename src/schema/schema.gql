@@ -3,14 +3,10 @@ type Query {
 }
 
 type Dogs {
-  dogs: [Dog]
+  dogs: [PetInfo]
 }
 
-type Dog {
-  dogInfo: DogInfo
-}
-
-type DogInfo {
+type PetInfo {
   name: String!
-  age: Int
+  age(doubled: Boolean): Int
 }
