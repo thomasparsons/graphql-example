@@ -1,38 +1,50 @@
-{
-  "dogs": [
-    {
-      "age": 5,
-      "name": "Rover"
-    },
-    {
-      "age": 1,
-      "name": "Jack"
-    },
-    {
-      "age": 4,
-      "name": "Max"
-    },
-    {
-      "age": 12,
-      "name": "Rex"
-    }
-  ],
-  "cats": [
-    {
-      "age": 17,
-      "name": "Lily"
-    },
-    {
-      "age": 3,
-      "name": "Charlie"
-    },
-    {
-      "age": 6,
-      "name": "Frank"
-    },
-    {
-      "age": 9,
-      "name": "Boots"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "age": 5,
+    "name": "Rover",
+    "type": "dog"
+  },
+  {
+    "id": 2,
+    "age": 1,
+    "name": "Jack",
+    "type": "dog"
+  },
+  {
+    "id": 3,
+    "age": 4,
+    "name": "Max",
+    "type": "dog"
+  },
+  {
+    "id": 4,
+    "age": 12,
+    "name": "Rex",
+    "type": "dog"
+  },
+  {
+    "id": 5,
+    "age": 17,
+    "name": "Lily",
+    "type": "cat"
+  },
+  {
+    "id": 6,
+    "age": 3,
+    "name": "Charlie",
+    "type": "cat"
+  },
+  {
+    "id": 7,
+    "age": 6,
+    "name": "Frank",
+    "type": "cat"
+  },
+  {
+    "id": 8,
+    "age": 9,
+    "name": "Boots",
+    "type": "cat"
+  }
+]
