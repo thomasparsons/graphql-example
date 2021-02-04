@@ -17,16 +17,16 @@ go to localhost:3001 and paste in this query:
 ```
 query {
   getDogs {
-    dogs {
-      dogInfo {
-        ...doggoAge
-      }
-    }
+    ...petInfo
+  }
+  getCats {
+    ...petInfo
+    humanAge: age(humanYears: true)
   }
 }
 
-fragment doggoAge on DogInfo {
-  age
+fragment petInfo on PetInfo {
   name
+  age
 }
 ```
