@@ -1,20 +1,21 @@
-import typeResolvers from "./resolvers/index" // eslint-disable-line
-import typeDefinitions from "./schema/index" // eslint-disable-line
+import typeResolvers from "./resolvers/index";
+import typeDefinitions from "./schema/index";
 
-const { ApolloServer } = require("apollo-server")
+const { ApolloServer } = require("apollo-server");
 
-const { PORT = 3001 } = process.env
+const { PORT = 3001 } = process.env;
 
 const server = new ApolloServer({
-  context: ({ req }: any) => {
+  context: () => {
     return {
-      jwtToken: req.headers.authorization
-    }
+      dogYears: 6,
+      catYears: 7,
+    };
   },
   resolvers: typeResolvers,
-  typeDefs: typeDefinitions
-})
+  typeDefs: typeDefinitions,
+});
 
 server.listen({ port: PORT }).then(({ url }: any) => {
-  return console.log(`🚀 Server ready at ${url}`) // eslint-disable-line no-console
-})
+  return console.log(`🚀 Server ready at ${url}`); // eslint-disable-line no-console
+});

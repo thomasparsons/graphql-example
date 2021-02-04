@@ -1,31 +1,48 @@
+import pets from "./pets.json";
+
+enum PetType {
+  CAT = "cat",
+  DOG = "dog",
+}
+
+interface Pet {
+  age: number;
+  name: string;
+  node_id: string;
+  type: PetType;
+}
+
+interface Context {
+  catYears: number;
+  dogYears: number;
+}
+
 const resolvers = {
   Query: {
     getDogs: () => {
-      return {
-        dogs: [{
-          dogInfo: {
-            age: 5,
-            name: "Rover"
-          }
-        }, {
-          dogInfo: {
-            age: 1,
-            name: "Jack"
-          }
-        }, {
-          dogInfo: {
-            age: 4,
-            name: "Max"
-          }
-        }, {
-          dogInfo: {
-            age: 12,
-            name: "Rex"
-          }
-        }]
+      return pets.filter((pet) => pet.type === PetType.DOG);
+    },
+    getCats: () => {
+      return pets.filter((pet) => pet.type === PetType.CAT);
+    },
+  },
+  PetInfo: {
+    age: (parent: Pet, args: { humanYears: boolean }, context: Context) => {
+      if (args.humanYears) {
+        if (parent.type === PetType.CAT) {
+          return parent.age * context.catYears;
+        }
+        return parent.age * context.dogYears;
       }
-    }
-  }
-}
+      return parent.age;
+    },
 
-export default resolvers
+    name: ({ name }: Pet) => name,
+
+    node_id: (parent: Pet) => {
+      return parent.node_id;
+    },
+  },
+};
+
+export default resolvers;

@@ -1,16 +1,10 @@
 type Query {
-  getDogs: Dogs
+  getDogs: [PetInfo]
+  getCats: [PetInfo]
 }
 
-type Dogs {
-  dogs: [Dog]
-}
-
-type Dog {
-  dogInfo: DogInfo
-}
-
-type DogInfo {
+type PetInfo {
+  node_id: ID!
   name: String!
-  age: Int
+  age(humanYears: Boolean): Int
 }
